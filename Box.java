@@ -1,3 +1,6 @@
+
+//Example of class and object in java
+
 class Box{
     
     private int length, breadth, height;

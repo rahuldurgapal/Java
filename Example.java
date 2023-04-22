@@ -15,7 +15,8 @@ class Box{
         System.out.println("breadth=" +breadth);
         System.out.println("height=" +height);
     }
-
+}
+      class Example{
     
         public static void main(String[] args){
 
@@ -24,3 +25,4 @@ class Box{
             b1.showDimension();
         }
 }   
+

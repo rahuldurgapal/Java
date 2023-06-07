@@ -4,7 +4,7 @@ class A{
     }
 }
 class  B extends A{
-    public void f1(int x){
+    public void f1(int x){                 //Function Overriding
         System.out.println("Class B");
     }
 }

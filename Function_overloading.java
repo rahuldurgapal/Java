@@ -1,11 +1,11 @@
 class A{
    public void f1(int x){
-     System.out.println("Class A");
+     System.out.println("Class A " +x);
    }
 }
 class B extends A{             //Function Overloading
     public void f1(int x, int y){
-        System.out.println("Class B");
+        System.out.println("Class B " +(x+y));
     }
 }
 public class Function_overloading{

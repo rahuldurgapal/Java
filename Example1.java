@@ -1,23 +1,53 @@
-interface i1
-{
-		 int x=6;
-		 void fun1();
+import java.awt.*;
+import java.awt.event.*;
+
+public class Example1 extends WindowAdapter implements ActionListener {
+
+    private Frame frame;
+    private Button ok;
+    private Label disp;
+    private boolean click;
+
+    public Example1(){
+        frame = new Frame("Hi from AWT");
+
+        disp = new Label();
+        disp.setText("Enter this button");
+        disp.setBounds(0,50,360,50);
+        disp.setBackground(Color.blue);
+
+
+        click = false;
+
+        ok = new Button("Hi 👋");
+        ok.setBounds(40,120,100,30);
+
+        ok.addActionListener(this);    
+        
+        frame.addWindowListener(this);
+
+        frame.add(disp);
+        frame.add(ok);
+        frame.setSize(360,200);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setResizable(false);
+    }
+    public void windowClosing(WindowEvent e) {
+        frame.dispose();
+    }
+
+    public void actionPerformed (ActionEvent e) {  
+        if(e.getSource() == ok){  
+        if(click)
+            disp.setText("Hello");
+        else disp.setText("Hi");
+        click = !click;
+        }
+    }
+
+    public static void main(String []args){
+        Example1 a = new Example1();
+    }
+
 }
-class A implements i1
-{
-       int y=7;
-		public void fun1()
-		{
-				System.out.println("Hello");
-		}
-}
-class Example1
-{
-	public static void main(String[] args) 
-	{
-		A obj=new A();
-		System.out.println("X="+obj.x);
-        System.out.println("Y="+obj.y);
-		obj.fun1();
-	}
-} 
